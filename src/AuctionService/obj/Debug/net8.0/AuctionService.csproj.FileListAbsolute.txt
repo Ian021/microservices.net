@@ -100,3 +100,10 @@
 /home/ian/Repositorios/microservices.net/src/AuctionService/obj/Debug/net8.0/AuctionService.csproj.AssemblyReference.cache
 /home/ian/Repositorios/microservices.net/src/AuctionService/obj/Debug/net8.0/AuctionService.csproj.CopyComplete
 /home/ian/Repositorios/microservices.net/src/AuctionService/obj/Debug/net8.0/AuctionService.sourcelink.json
+/home/ian/Repositorios/microservices.net/src/AuctionService/bin/Debug/net8.0/MassTransit.dll
+/home/ian/Repositorios/microservices.net/src/AuctionService/bin/Debug/net8.0/MassTransit.Abstractions.dll
+/home/ian/Repositorios/microservices.net/src/AuctionService/bin/Debug/net8.0/MassTransit.EntityFrameworkCoreIntegration.dll
+/home/ian/Repositorios/microservices.net/src/AuctionService/bin/Debug/net8.0/MassTransit.RabbitMqTransport.dll
+/home/ian/Repositorios/microservices.net/src/AuctionService/bin/Debug/net8.0/RabbitMQ.Client.dll
+/home/ian/Repositorios/microservices.net/src/AuctionService/bin/Debug/net8.0/Contracts.dll
+/home/ian/Repositorios/microservices.net/src/AuctionService/bin/Debug/net8.0/Contracts.pdb

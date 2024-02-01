@@ -57,12 +57,12 @@ public class AuctionsController : ControllerBase
         auction.Seller = "test";
 
         _context.Auctions.Add(auction);
-        
-        var result = await _context.SaveChangesAsync() > 0;
 
         var newAuction = _mapper.Map<AuctionDTO>(auction);
 
         await _publishEndpoint.Publish(_mapper.Map<AuctionCreated>(newAuction));
+        
+        var result = await _context.SaveChangesAsync() > 0;
 
         if (!result) return BadRequest("Could not save changes to the DB");
 
@@ -85,6 +85,8 @@ public class AuctionsController : ControllerBase
         auction.Item.Mileage = auctionDTO.Mileage ?? auction.Item.Mileage;
         auction.Item.Year = auctionDTO.Year ?? auction.Item.Year;
 
+        await _publishEndpoint.Publish(_mapper.Map<AuctionUpdated>(auction));
+
         var result = await _context.SaveChangesAsync() > 0;
 
         if (result) return Ok();
@@ -102,6 +104,8 @@ public class AuctionsController : ControllerBase
         // TODO: check seller == username
 
         _context.Auctions.Remove(auction);
+
+        await _publishEndpoint.Publish(new { Id = auction.Id.ToString() });
 
         var result = await _context.SaveChangesAsync() > 0;
 
