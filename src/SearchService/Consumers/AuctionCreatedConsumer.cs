@@ -2,13 +2,13 @@
 using Contracts;
 using MassTransit;
 using MongoDB.Entities;
-using SearchService;
 
-namespace AuctionService;
+namespace SearchService;
 
 public class AuctionCreatedConsumer : IConsumer<AuctionCreated>
 {
-    public IMapper _mapper;
+    private readonly IMapper _mapper;
+
     public AuctionCreatedConsumer(IMapper mapper)
     {
         _mapper = mapper;

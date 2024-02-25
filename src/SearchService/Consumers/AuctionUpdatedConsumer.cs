@@ -1,4 +1,4 @@
-﻿﻿using AutoMapper;
+﻿using AutoMapper;
 using Contracts;
 using MassTransit;
 using MongoDB.Entities;
@@ -31,7 +31,7 @@ public class AuctionUpdatedConsumer : IConsumer<AuctionUpdated>
             }, item)
             .ExecuteAsync();
 
-        if (!result.IsAcknowledged)
+        if (!result.IsAcknowledged) 
             throw new MessageException(typeof(AuctionUpdated), "Problem updating mongodb");
     }
 }
